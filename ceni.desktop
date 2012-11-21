@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Exec=su-to-root -c /usr/bin/Ceni
+Icon=ceni
+Terminal=true
+Name=Ceni
+GenericName=Network card configuration
+GenericName[de]=Netzwerkkarte konfigurieren
+GenericName[ru]=Конфигурация сетового адаптера
+GenericName[es]=Configuración de la tarjeta de red
+GenericName[pt]=Configuração da placa de rede
+Categories=Network;

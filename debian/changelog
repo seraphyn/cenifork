@@ -1,0 +1,537 @@
+ceni (2.25) unstable; urgency=low
+
+  * bump standards version to 3.9.3, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 23 Feb 2012 15:48:55 +0100
+
+ceni (2.24) unstable; urgency=low
+
+  * switch to compat level 9.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 16 Jan 2012 00:37:48 +0100
+
+ceni (2.23) unstable; urgency=low
+
+  * fixing some noise.
+
+ -- Joaquim Boura <x-un-i@berlios.de>  Tue, 17 May 2011 23:15:53 +0200
+
+ceni (2.22) unstable; urgency=low
+
+  * bump standards version to 3.9.2, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 29 Apr 2011 04:04:26 +0200
+
+ceni (2.21) unstable; urgency=low
+
+  * add libexpect-perl to Build-Depends-Indep.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Oct 2010 16:38:30 +0200
+
+ceni (2.20) unstable; urgency=low
+
+  * Remove any need or option for wireless-tools, and use wpasupplicant for
+    scanning and as sole configuration backend for wifi.
+  * Depend in libexpect-perl to use Expect module for communicating with
+    interactive wpa_cli process.
+  * Misc cleanups/bugfixes.
+  * No longer install Ceni_{read,write}_config, no-one uses them ttbomk.
+  * Add bin/wpa_cli_scan.pl: test script for collecting scan data from
+    wpa_supplicant/wpa_cli.
+
+ -- Kel Modderman <kel@otaku42.de>  Sun, 12 Sep 2010 20:41:26 +1000
+
+ceni (2.13) unstable; urgency=low
+
+  * switch to compat level 8.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Aug 2010 03:28:25 +0200
+
+ceni (2.12) unstable; urgency=low
+
+  * bump standards version to 3.9.1, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 03 Aug 2010 15:40:34 +0200
+
+ceni (2.11) unstable; urgency=low
+
+  * bump standards version to 3.9.0, no changes necessary.
+  * embed the BSD license directly into debian/copyright.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 22 Jul 2010 01:14:55 +0200
+
+ceni (2.10) unstable; urgency=low
+
+  * switch to dpkg-source 3.0 (native) format.
+  * bump compat level to 7.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 03:20:50 +0200
+
+ceni (2.9) unstable; urgency=low
+
+  * detect virtio_net devices, such as "Qumranet Virtio network device".
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Apr 2010 17:08:17 +0200
+
+ceni (2.8) unstable; urgency=low
+
+  * bump standards version to 3.8.4, no changes necessary.
+  * update copyright years.
+  * add "Manufacturer" to device blacklist.
+  * condense whitespace in nicinfo.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 26 Apr 2010 02:20:31 +0200
+
+ceni (2.7) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Add initial support for wireless scanning with iw. Disable it for now.
+  * Use wpa_supplicant by default for any wireless link requiring encryption.
+
+  [ Stefan Lippers-Hollmann ]
+  * bump standards version to 3.8.3, no changes necessary.
+
+ -- Kel Modderman <kel@otaku42.de>  Thu, 10 Dec 2009 21:39:55 +1000
+
+ceni (2.5) unstable; urgency=low
+
+  * fix desktop-entry-contains-encoding-key.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 20 Feb 2009 15:15:27 +0100
+
+ceni (2.4) unstable; urgency=low
+
+  * make lintian happy and depend on ${misc:Depends}.
+  * no longer conflict with configure-networkcard, ot's gone for long enough.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 08 Dec 2008 21:17:55 +0100
+
+ceni (2.3) unstable; urgency=low
+
+  [ Bernard Gray ]
+  * replace icon with a newie
+  * modify copyright to suit new icon
+  * cleanup junk in icon svg, convert to plain svg
+
+  [ Kel Modderman ]
+  * When getting lspci device description, only accept one line of output.
+
+ -- Kel Modderman <kel@otaku42.de>  Sun, 26 Oct 2008 10:10:44 +1000
+
+ceni (2.2) unstable; urgency=low
+
+  * update icon candidate to something a little more themed with new wpagui icon
+
+ -- Bernard Gray <bernard.gray@gmail.com>  Thu, 23 Oct 2008 14:57:59 +1100
+
+ceni (2.1) unstable; urgency=low
+
+  * Consider that a user PATH may not contain /sbin, so use absolute
+    path to execute iwgetid and udevadm
+
+ -- Kel Modderman <kel@otaku42.de>  Thu, 16 Oct 2008 02:04:29 +1000
+
+ceni (2.0) unstable; urgency=low
+
+  [ Niall Walsh ]
+  * Add basic support to enable wpa-roam and edit logical interfaces.
+
+  [ Kel Modderman ]
+  * Bump major version.
+  * Consistent use of parentheses for method calls.
+  * Remove commented code for chmoding wpa_supplicant.conf, will not be
+    needed.
+  * A bit of gratuitous code cleanup and scrubbing.
+  * Overhaul main loop flow.
+  * Work a bit on the initial support for wpa-roam and logical interfaces.
+  * Do not allow class property to be set for logical interfaces
+  * Only ifdown/ifup hardware network interfaces.
+  * Provide dialog for more polished exit confirmation.
+  * Separate lists for Hardware and Logical interfaces.
+  * Tweak wifi_scan_form.
+  * Use regular expression input filter when adding new logical
+    interfaces.
+  * Use dh from debhelper >= 7, reduce debian/rules.
+  * Add icons/Makefile to replace create-icons debian/rules target.
+  * Reduce the vertical footprint of user interface.
+  * Use border titles rather than borderless boxes for input field labels.
+  * Add wpa_supplicant configuration form.
+  * Remove the manual option from network method list, it is useless.
+  * Add vertical scroll bar to listboxes that could have more items that
+    allocated lines.
+  * Tweak layout of wireless settings form.
+  * Add support for selecting WPA roam initial template and final
+    configuration location.
+  * Ceni really depends on wireless-tools and wpasupplicant. Suggest
+    wpagui.
+  * Fix pod2man errors by using proper =over/=back syntax for list
+    items.
+  * Update copyright, it is almost 2009 already...
+  * Add new Interface actoin box with selection items for creating new
+    logical interface singularly, or creating logical interface mappings
+    for all networks with id_str in a wpa_supplicant.conf file.
+
+ -- Kel Modderman <kel@otaku42.de>  Wed, 08 Oct 2008 00:18:55 +1000
+
+ceni (1.41) unstable; urgency=low
+
+  * Add is_wireless method to Ceni::Backend in preparation for the
+    removal of the wireless sysfs attribute in Linux 2.6.27. Instead
+    detect cfg80211 phy80211 sysfs attribute, falling back to the use of
+    iwgetid --protocol to test for WEXT support.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 26 Sep 2008 07:04:18 +1000
+
+ceni (1.40) unstable; urgency=low
+
+  [ Bernard Gray ]
+  * improve auto field (netmask/broadcast etc) filling with 10.0.0.0/8 support
+  * style change for 10.0.0.0 auto field to suit better
+  * add support for 172.0.0.0/16 support - strictly speaking, this should be /12
+  * add more logical behaviour to network add form
+    - clear text input fields when you type in them
+    - this only affects fields where it makes sense ie fields that require an
+      ip address, not those that accept plaintext/hostnames for example
+
+  [ Kel Modderman ]
+  * Test for read capability of e/n/i, to avoid baling out without error
+    under some circumstances.
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 20 Sep 2008 00:32:02 +1000
+
+ceni (1.39) unstable; urgency=low
+
+  * Simplify udevadm/udevinfo detection.
+  * Allow /e/n/i to be readable by root + root group.
+
+ -- Kel Modderman <kel@otaku42.de>  Wed, 17 Sep 2008 17:05:47 +1000
+
+ceni (1.38) unstable; urgency=low
+
+  * Use Terminal=true (instead of yes) in ceni.desktop to fix issue on
+    XFCE. Thanks x-un-i.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 30 Aug 2008 02:24:23 +1000
+
+ceni (1.37) unstable; urgency=low
+
+  * Allow dns-{nameservers,search} to be configurable for DHCP interfaces too.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 19 Aug 2008 02:35:04 +1000
+
+ceni (1.36) unstable; urgency=low
+
+  * bump standards version to 3.8.0, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun, 08 Jun 2008 15:28:03 +0200
+
+ceni (1.35) unstable; urgency=low
+
+  * Be more precise about location of GPL-2 license on Debian system.
+  * Replace Ceni::Backend description text with something other than h2xs
+    boilerplate, but no more informative for outsiders.
+  * Clear the terminal upon program exit more effectively.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 22 Apr 2008 17:07:41 +1000
+
+ceni (1.34) unstable; urgency=low
+
+  [ Bernard Gray ]
+  * remember to add the wip icon this time :/
+  * clean up colouring of wip icon text
+  * add a little doovalacka to make it a bit unique
+  * remove clip and clone info from wip for kde3/4 compat
+
+  [ Kel Modderman ]
+  * Provide compatibility code for upcoming udevadm utility that replaces
+    udevinfo.
+
+ -- Kel Modderman <kel@otaku42.de>  Mon, 24 Mar 2008 16:05:36 +1000
+
+ceni (1.33) unstable; urgency=low
+
+  * appease lintian and write (C) as © in debian/copyright.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 20 Feb 2008 21:51:48 +0100
+
+ceni (1.32) unstable; urgency=low
+
+  * Fix presentation of non-encrypted networks in wireless selection form.
+
+ -- Kel Modderman <kel@otaku42.de>  Wed, 30 Jan 2008 21:27:19 +1000
+
+ceni (1.31) unstable; urgency=low
+
+  * nicinfo: use comma field seperator as per xadras request.
+  * Add Ceni_read_config to assist in allowing external programs an easier way
+    of parsing current ifupdown configuration options for an interface.
+
+ -- Kel Modderman <kel@otaku42.de>  Thu, 24 Jan 2008 12:43:27 +1000
+
+ceni (1.30) unstable; urgency=low
+
+  * add dependency checks to create-icons.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 21 Jan 2008 18:15:50 +0100
+
+ceni (1.29) unstable; urgency=low
+
+  * Bail out with error message if system doesn't have existing
+    /etc/network/interfaces file.
+
+ -- Kel Modderman <kel@otaku42.de>  Sun, 20 Jan 2008 00:09:52 +1000
+
+ceni (1.28) unstable; urgency=low
+
+  * update to debhelper compat 6.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 18 Jan 2008 22:55:51 +0100
+
+ceni (1.27) unstable; urgency=low
+
+  * Remove t/interfaces.eth0.
+  * Fix Uploaders email address.
+  * Cleanup test suite.
+  * Recommend resolvconf.
+  * Cleanup debian/copyright, and conform to proposed machine parsable format.
+  * Conform to pkg-perl policy; drop cdbs.
+  * Enhance debian/control package description.
+  * Cleanup source layout, keep icon stuff in its own area.
+  * Add Vcs-Svn and Vcs-Browser to debian/control.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 15 Jan 2008 16:56:24 +1000
+
+ceni (1.26) unstable; urgency=low
+
+  * Add extra debug print to Ceni::Backend for each line of udevinfo output.
+
+ -- Kel Modderman <kel@otaku42.de>  Tue, 15 Jan 2008 02:51:37 +1000
+
+ceni (1.25) unstable; urgency=low
+
+  * Blacklist tapX network devices from detection in Ceni::Backend.
+  * Remove unused variable $type from nic_info in Ceni::Backend. Reject
+    interfaces without the subsystems attribute.
+
+ -- Kel Modderman <kel@otaku42.de>  Mon, 14 Jan 2008 21:37:00 +1000
+
+ceni (1.24) unstable; urgency=low
+
+  * Add Ceni_write_config to provide interface for external programs to use
+    Ceni::Backend to write network interface data to /etc/network/interfaces
+    based on an external configuration file.
+  * Add Stefan Lippers-Hollmann to Uploaders field of debian/control.
+
+ -- Kel Modderman <kel@otaku42.de>  Sun, 13 Jan 2008 16:54:50 +1000
+
+ceni (1.23) unstable; urgency=low
+
+  * Cleanup ceni.desktop
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 12 Jan 2008 12:04:30 +1000
+
+ceni (1.22) unstable; urgency=low
+
+  [ Stefan Lippers-Hollmann ]
+  * symlink lower case manpage as well.
+  * refresh shipped icon set.
+
+  [ Bernard Gray ]
+  * added gear and new colour scheme to ceni icon
+  * update copyright for all contributors, plus gear
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 10 Jan 2008 12:14:28 +0100
+
+ceni (1.21) unstable; urgency=low
+
+  * add create-icons target in debian/rules.
+  * no longer run imagemagick while building.
+  * install svg icon into scalable icon set.
+  * add freshly generated icon set.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 10 Jan 2008 02:11:04 +0100
+
+ceni (1.20) unstable; urgency=low
+
+  * add copyright information for the new icons.
+  * fix icon reference in XDG desktop file.
+  * add icon references to debian menu system entries.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 09 Jan 2008 14:45:06 +0100
+
+ceni (1.19) unstable; urgency=low
+
+  * fix desktop file (duplicated spanish comment).
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 09 Jan 2008 14:06:18 +0100
+
+ceni (1.18) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Eliminate warning about statement after exec. No Need for this warning
+    about failed su, su will say so anyway.
+
+  [ Bernard Gray ]
+  * add source for ceni icon
+
+  [ Stefan Lippers-Hollmann ]
+  * export svg icons to properly sized XDG compatible PNG graphics.
+  * hook up imagemagick based xpm conversion for debian menu entries.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 09 Jan 2008 13:54:15 +0100
+
+ceni (1.17) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Provide nicinfo in /usr/bin/ that replaces functionality of nicinfo in
+    configure-networkcard < 0.7.21.
+  * Conflict with configure-networkcard < 0.7.21.
+  * Add Name key to ceni.desktop. Install desktop file to
+    /usr/share/applications/.
+  * Forget about allowing Ceni to start as user in debug mode, that can be
+    removed when debugging anyway.
+
+  [ Stefan Lippers-Hollmann ]
+  * bump versioned conflicts with configure-network to safe version.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Jan 2008 17:49:39 +0100
+
+ceni (1.16) unstable; urgency=low
+
+  * add XDG compatible desktop file.
+  * add debian menu system entry.
+  * add symlink from Ceni --> ceni.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 07 Jan 2008 21:48:35 +0100
+
+ceni (1.15) unstable; urgency=low
+
+  * Fix passing of arguments to exec'd su call.
+  * Install signal handler to call clear on quit.
+
+ -- Kel Modderman <kel@otaku42.de>  Mon, 10 Dec 2007 16:20:47 +1000
+
+ceni (1.14) unstable; urgency=low
+
+  [ Kel Modderman ]
+  * Fix infinite loop when passing uknown arguments as user.
+  * Fix back button in network form when there is not wireless configuration
+    done, back should return to the interface choice menu.
+  * Fix focus on wifi backend when ssid selection was skipped.
+  * Add bogus -h|--help option to refer people to manpage.
+  * Don't die when we cannot write to /e/n/i, just raise a warning.
+  * Set 0600 permissions on /e/n/i.
+
+  [ Stefan Lippers-Hollmann ]
+  * update to Standards-Version 3.7.3, no changes necessary.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 03 Dec 2007 12:33:07 +0100
+
+ceni (1.13) unstable; urgency=low
+
+  * Cleanup entry into each form.
+  * Add ifstate state tracking to backend.
+  * Enhanced network device presentation.
+  * Remove stray regexp property on nameserver titlebox.
+
+ -- Kel Modderman <kel@otaku42.de>  Mon, 03 Dec 2007 00:14:47 +1000
+
+ceni (1.12) unstable; urgency=low
+
+  * Fix start via priviledge esculation plus exec.
+
+ -- Kel Modderman <kel@otaku42.de>  Sun, 02 Dec 2007 10:45:15 +1000
+
+ceni (1.11) unstable; urgency=low
+
+  * Add support for configuring encryptionless association to an ssid.
+  * More UI enhancements to the wireless configuration form.
+
+ -- Kel Modderman <kel@otaku42.de>  Sun, 02 Dec 2007 10:37:13 +1000
+
+ceni (1.10) unstable; urgency=low
+
+  * Fix selection of invalid network setting field with proper focus shift.
+  * Fix preselection of manual inet method based on current configuration.
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 01 Dec 2007 17:35:36 +1000
+
+ceni (1.9) unstable; urgency=low
+
+  * Add psk_is_valid() function to verify validity of encryption keys.
+  * Numerous enhancements to the wireless input form.
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 01 Dec 2007 17:27:24 +1000
+
+ceni (1.8) unstable; urgency=low
+
+  * Rename the Read STDIN button box to "Paste" and add a "Clear" button next
+    to it.
+  * Add a psk character length counter next to psk field.
+  * Improve format of wireless selection listbox.
+  * Simplify the pre and post processing of wireless configuration form.
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 01 Dec 2007 14:04:08 +1000
+
+ceni (1.7) unstable; urgency=low
+
+  * Some tiny tweaks, bump version for a new upload.
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 01 Dec 2007 10:54:08 +1000
+
+ceni (1.6) unstable; urgency=low
+
+  * Don't restrict wireless backend choice due to scan results, only make a
+    1st preference. Probably a few others need to be less restrictive too.
+  * Add is_hex(), will use it to make smarter choices about input'd wep keys
+    in future.
+  * Check WEP key, if its not a valid hex key prepend the magic "s:" to the
+    beginning of the key, if not already done so.
+
+ -- Kel Modderman <kel@otaku42.de>  Sat, 01 Dec 2007 00:43:18 +1000
+
+ceni (1.5) unstable; urgency=low
+
+  * When making psk field unfocusable, also make the Read STDIN button
+    unusable.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 30 Nov 2007 20:22:35 +1000
+
+ceni (1.4) unstable; urgency=low
+
+  * Cleanup STDERR dup and redirection.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 30 Nov 2007 18:29:17 +1000
+
+ceni (1.3) unstable; urgency=low
+
+  * Fix passing of arguments to root process that gets exec'd. This does mean
+    that --no-act must be first arg if used.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 30 Nov 2007 18:21:28 +1000
+
+ceni (1.2) unstable; urgency=low
+
+  * Depend on libterm-readkey-perl. Use Term::ReadKey to more securely acquire
+    psk from STDIN. Also use it for final confirmation.
+  * When psk field has content, set stdin to non-focusable state.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 30 Nov 2007 17:07:43 +1000
+
+ceni (1.1) unstable; urgency=low
+
+  * Fix root test when debug option is used. Only avoid becoming root if
+    --no-act is used.
+  * Leave curses before running ifup.
+  * Preseed class selection based on current configuration.
+  * Don't attempt to call get method on static network entries that may not
+    exist (eg resolvconf dependent).
+  * Save file descriptor to STDERR and restore it for the final ifup.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 30 Nov 2007 16:27:48 +1000
+
+ceni (1.0) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Kel Modderman <kel@otaku42.de>  Fri, 30 Nov 2007 11:08:21 +1000
